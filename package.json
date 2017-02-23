@@ -1,13 +1,12 @@
 {
-  "name": "cerebro-plugin",
-  "version": "0.0.2",
-  "description": "",
+  "name": "convert-color",
+  "version": "0.0.1",
+  "description": "Convert Hex code to RGB and vice versa",
   "license": "MIT",
-  "repository": "KELiON/cerebro-plugin",
+  "repository": "",
   "author": {
-    "name": "Alexandr Subbotin",
-    "email": "kelionweb@gmail.com",
-    "url": "asubbotin.ru"
+    "name": "Rafael Acioly",
+    "email": "aciolyr@gmail.com"
   },
   "engines": {
     "node": ">=4"

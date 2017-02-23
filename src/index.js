@@ -1,10 +1,56 @@
 'use strict';
+const toRGB = require('hex-rgb');
+const id = 'convertHex';
+const icon = require('./icon.png');
+
+/**
+ * Validate hex color
+ */
+function isHex(hexCode) {
+  return hexCode.match(/^convertColor #[a-fA-F0-9]+/);
+}
+
+/**
+ * Validate RGB color
+ */
+function isRGB(RGBCode) {
+  return RGBCode.match(/^convertColor rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+}
+
+/**
+ * Convert RGB to hex color
+ */
+function toHex(r,g,b) {
+   var bin = r << 16 | g << 8 | b;
+    return (function(h){
+        return new Array(7-h.length).join("0")+h
+    })(bin.toString(16).toUpperCase())
+}
 
 const plugin = ({term, display, actions}) => {
-  // It is your main plugin function
-  // do something and call display() with your results
+  let rgb = isRGB(term);
+  let hex = isHex(term);
+  
+  if (term.match(/^convertColor/)) {
+    
+    if (rgb) { var color = '#' + toHex(rgb[1], rgb[2], rgb[3]) };
+    if (hex) { var color = 'rgb(' + toRGB(hex.input.split(' ')[1]).join(',') + ')' };
+
+    display({
+      id,
+      icon,
+      title: `Your color: ${color == undefined ? '...' : color}`,
+      clipboard: 'My title',
+      getPreview: () => {
+        'teste'
+      }
+    });
+  }
+
 };
 
 module.exports = {
-  fn: plugin
+  fn: plugin,
+  name: 'Convert code colors',
+  keyword: 'convertColor'
 }
