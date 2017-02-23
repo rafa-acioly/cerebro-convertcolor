@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Convert Hex code to RGB and vice versa",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/rafa-acioly/cerebro-convertcolor",
   "author": {
     "name": "Rafael Acioly",
     "email": "aciolyr@gmail.com"
