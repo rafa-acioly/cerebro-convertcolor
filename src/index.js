@@ -42,6 +42,9 @@ const plugin = ({term, display, actions}) => {
       title: `Your color: ${color == undefined ? '...' : color}`,
       getPreview: () => {
         'teste'
+      },
+      onSelect: () => {
+        actions.copyToClipboard(color);
       }
     });
   }
