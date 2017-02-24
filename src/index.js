@@ -40,7 +40,6 @@ const plugin = ({term, display, actions}) => {
       id,
       icon,
       title: `Your color: ${color == undefined ? '...' : color}`,
-      clipboard: 'My title',
       getPreview: () => {
         'teste'
       }
