@@ -1,6 +1,6 @@
 'use strict';
 const toRGB = require('hex-rgb');
-const id = 'convertHex';
+const id = 'convertColor';
 const icon = require('./icon.png');
 
 /**
@@ -40,11 +40,9 @@ const plugin = ({term, display, actions}) => {
       id,
       icon,
       title: `Your color: ${color == undefined ? '...' : color}`,
-      getPreview: () => {
-        'teste'
-      },
       onSelect: () => {
         actions.copyToClipboard(color);
+        new Notification('Text Copied', {body: color});
       }
     });
   }
