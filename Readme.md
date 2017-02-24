@@ -8,6 +8,7 @@
 ## Usage
 
 In Cerebro, type 'convertColor' followed by the code in RGB or Hexadecimal
+* Press enter to copy the converted code
 
 ## Installing
 
