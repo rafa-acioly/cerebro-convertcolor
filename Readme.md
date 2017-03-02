@@ -2,8 +2,7 @@
 
 > [Cerebro](https://cerebroapp.com) plugin to generate hexadecimal based on rgb and vice and versa
 
-![](screenshot.png)
-![](args-screenshot.png)
+![](howitworks.gif)
 
 ## Usage
 
