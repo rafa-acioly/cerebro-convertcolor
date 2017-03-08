@@ -21,7 +21,7 @@ function isRGB(RGBCode) {
  * Convert RGB to hex color
  */
 function toHex(r,g,b) {
-   var bin = r << 16 | g << 8 | b;
+   let bin = r << 16 | g << 8 | b;
     return (function(h){
         return new Array(7-h.length).join("0")+h
     })(bin.toString(16).toUpperCase())
@@ -33,8 +33,8 @@ const plugin = ({term, display, actions}) => {
   
   if (term.match(/^convertColor/)) {
     
-    if (rgb) { var color = '#' + toHex(rgb[1], rgb[2], rgb[3]) };
-    if (hex) { var color = 'rgb(' + toRGB(hex.input.split(' ')[1]).join(',') + ')' };
+    if (rgb) { let color = '#' + toHex(rgb[1], rgb[2], rgb[3]) };
+    if (hex) { let color = 'rgb(' + toRGB(hex.input.split(' ')[1]).join(',') + ')' };
 
     display({
       id,
