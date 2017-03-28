@@ -30,11 +30,11 @@ function toHex(r,g,b) {
 const plugin = ({term, display, actions}) => {
   var rgb = isRGB(term);
   var hex = isHex(term);
-  
+
   if (term.match(/^convertColor/)) {
-    
-    if (rgb) { var color = '#' + toHex(rgb[1], rgb[2], rgb[3]) };
-    if (hex) { var color = 'rgb(' + toRGB(hex.input.split(' ')[1]).join(',') + ')' };
+
+    if (rgb) { var color = `#${toHex(rgb[1], rgb[2], rgb[3])}` };
+    if (hex) { var color = `rgb(${toRGB(hex.input.split(' ')[1]).join(',')})` };
 
     display({
       id,
@@ -43,6 +43,10 @@ const plugin = ({term, display, actions}) => {
       onSelect: () => {
         actions.copyToClipboard(color);
         new Notification('Text Copied', {body: color, icon: icon});
+      },
+      getPreview: () => {
+        return `<h1>Your color preview...</h1>
+        <div style="background-color: ${color}; height: 150px; width: 100%; border: var(--main-border)"></div>`;
       }
     });
   }
