@@ -1,4 +1,6 @@
 'use strict';
+import Preview from './preview'
+import React from 'react'
 const toRGB = require('hex-rgb');
 const id = 'convertColor';
 const icon = require('./icon.png');
@@ -44,10 +46,7 @@ const plugin = ({term, display, actions}) => {
         actions.copyToClipboard(color);
         new Notification('Text Copied', {body: color, icon: icon});
       },
-      getPreview: () => {
-        return `<h1>Your color preview...</h1>
-        <div style="background-color: ${color}; height: 150px; width: 100%; border: var(--main-border)"></div>`;
-      }
+      getPreview: () => <Preview color={color} />
     });
   }
 
