@@ -2,6 +2,8 @@
 
 > [Cerebro](https://cerebroapp.com) plugin to generate hexadecimal based on rgb and vice and versa
 
+[![Say Thanks](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/rafa-acioly)
+
 ![](howitworks.gif)
 
 ## Usage
