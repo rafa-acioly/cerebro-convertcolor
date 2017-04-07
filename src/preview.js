@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import style from 'bulma/css/bulma.css'
+import style from './style.css'
 
 export default class Preview extends Component {
   render() {
