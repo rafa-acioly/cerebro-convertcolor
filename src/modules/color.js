@@ -1,16 +1,17 @@
 module.exports = {
     convert: (theColor, codeType) => {
         let url = `http://www.thecolorapi.com/id?${codeType}=${theColor}`;
+        console.log(url)
         return fetch(url)
         .then(response => response.json())
-        .then(json => {
+        .then(resp => {
             return {
-                hex: json.hex.value,
-                rgb: json.rgb.value,
-                hsl: json.hsl.value,
-                hsv: json.hsv.value,
-                cmyk: json.cmyk.value
+                hex: resp.hex.value,
+                rgb: resp.rgb.value,
+                hsl: resp.hsl.value,
+                hsv: resp.hsv.value,
+                cmyk: resp.cmyk.value
             }
-        });
+        })
     }
 }
