@@ -29,17 +29,9 @@ const plugin = ({term, display, actions}) => {
     display({
       icon,
       title: `Conversion for code ${term}`,
-      onSelect: () => {
-        actions.copyToClipboard(term)
-        new Notification('Text copied', {body: term, icon: icon})
-      },
-      getPreview: () => {
-        for (var key in colors) {
-          if (colors.hasOwnProperty(key)) {
-            <Preview color={ colors[key] } />
-          }
-        }
-      }
+      getPreview: () => (
+        <Preview color={ colors } actions={ actions } />
+      )
     });
   }
 };
