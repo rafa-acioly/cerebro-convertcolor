@@ -1,14 +1,14 @@
 'use strict';
 /**
- * Code modules
+ * Core modules
  */
 import React from 'react'
+import Color from 'color'
 
 /**
  * Modules developed by myself
  */
 import Preview from './preview'
-import color from './modules/color'
 import match from './modules/match'
 
 /**
@@ -19,22 +19,25 @@ import icon from './icon.png'
 
 const plugin = ({term, display, actions}) => {
   if (match.find(term)) {
-    let codeColor = match.find(term)
-    let codeType = match.getType(term)
+    let color = Color(term);
+    const colors = {
+      hex: color.hex().toString(),
+      rgb: color.rgb().string(),
+      hsl: color.hsl().string(),
+    }
 
-    color.convert(codeColor[0].replace('#', ''), codeType).then((response) => {
-      for (var key in response) {
-        if (response.hasOwnProperty(key)) {
-          display({
-            id,
-            icon,
-            title: `${key.toUpperCase()}`,
-            onSelect: () => {
-              actions.copyToClipboard(response[key]);
-              new Notification('Text Copied', {body: response[key], icon: icon});
-            },
-            getPreview: () => <Preview color={response[key]} />
-          });
+    display({
+      icon,
+      title: `Conversion for code ${term}`,
+      onSelect: () => {
+        actions.copyToClipboard(term)
+        new Notification('Text copied', {body: term, icon: icon})
+      },
+      getPreview: () => {
+        for (var key in colors) {
+          if (colors.hasOwnProperty(key)) {
+            <Preview color={ colors[key] } />
+          }
         }
       }
     });
@@ -44,5 +47,4 @@ const plugin = ({term, display, actions}) => {
 module.exports = {
   fn: plugin,
   name: 'Convert code colors',
-  keyword: 'convertColor'
 }
