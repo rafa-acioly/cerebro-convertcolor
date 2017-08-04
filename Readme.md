@@ -1,6 +1,6 @@
-# convertColor
+# Color convert
 
-> [Cerebro](https://cerebroapp.com) plugin to generate hexadecimal based on rgb and vice and versa
+> [Cerebro](https://cerebroapp.com) plugin to generate hexadecimal, rgb and hsl based on hex or rgb
 
 [![Say Thanks](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/rafa-acioly)
 
@@ -8,8 +8,8 @@
 
 ## Usage
 
-In Cerebro, type 'convertColor' followed by the code in RGB or Hexadecimal
-* Press enter to copy the converted code
+In Cerebro, type the code in RGB or Hexadecimal
+* Use arrow keys to move or click/enter to copy the converted code
 
 ## Installing
 
