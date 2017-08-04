@@ -17,7 +17,9 @@ import match from './modules/match'
 const id = 'convertColor';
 import icon from './icon.png'
 
-const plugin = ({term, display, actions}) => {
+export const name = 'Convert code colors'
+
+export const fn = ({term, display, actions}) => {
   if (match.find(term)) {
     let color = Color(term);
     const colors = {
@@ -35,8 +37,3 @@ const plugin = ({term, display, actions}) => {
     });
   }
 };
-
-module.exports = {
-  fn: plugin,
-  name: 'Convert code colors',
-}

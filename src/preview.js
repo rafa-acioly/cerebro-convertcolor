@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import style from './style.css'
 
-module.exports = ({ color, actions }) => (
+export default ({ color, actions }) => (
   <div>
     {Object.keys(color).map(code => (
       <div className={style.box} style={{margin: '1em 0', borderColor: color[code]}}>
