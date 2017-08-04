@@ -1,7 +1,7 @@
 {
   "name": "convert-color",
   "version": "1.1.0",
-  "description": "Convert Hex code to RGB and vice versa",
+  "description": "Convert Hex to RGB or HSL and RGB to Hex or HSL",
   "license": "MIT",
   "repository": "https://github.com/rafa-acioly/cerebro-convertcolor",
   "author": {
