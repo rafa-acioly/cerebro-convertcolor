@@ -1,22 +1,21 @@
 import React, { Component, PropTypes } from 'react'
 import style from './style.css'
 
-export default class Preview extends Component {
-  render() {
-    let inline = {
-      backgroundColor: this.props.color
-    };
-    return (
-      <div className={style.box} style={inline}>
-        <h1 className={style.title}>
-          {this.props.color}
+export default ({ color, actions }) => (
+  <div>
+    {Object.keys(color).map(code => (
+      <div className={style.box} style={{margin: '1em 0', borderColor: color[code]}}>
+        <h1 style={{color: color[code]}} className={style.title}>
+          { color[code] }
         </h1>
-        <h2 className={style.subtitle}>your color preview</h2>
+        <button style={{
+            color: color[code], 
+            borderColor: color[code],
+            margin: '.5em 0'
+          }} 
+          className="button is-small" 
+          onClick={() => {actions.copyToClipboard(color[code]); actions.hideWindow()} }>Copy</button>
       </div>
-    )
-  }
-}
-
-Preview.PropTypes = {
-  color: PropTypes.string.isRequired
-}
+    ))}
+  </div>
+)
