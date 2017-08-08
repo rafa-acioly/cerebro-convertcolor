@@ -6,7 +6,8 @@ export default ({ color, actions }) => (
   <div className={styles.wrapper}>
     <KeyboardNav>
       {Object.keys(color).map(code => (
-        <KeyboardNavItem 
+        <KeyboardNavItem
+          key={code}
           onSelect={() => {actions.copyToClipboard(color[code]); actions.hideWindow()} }
         >
           <div style={{backgroundColor: color[code]}} className={styles.colorBox} />

@@ -9,7 +9,6 @@ import Color from 'color'
  * Modules developed by myself
  */
 import Preview from './preview'
-import match from './modules/match'
 
 /**
  * Variables used on cerebro
@@ -20,7 +19,7 @@ import icon from './icon.png'
 export const name = 'Convert code colors'
 
 export const fn = ({term, display, actions}) => {
-  if (match.find(term)) {
+  try {
     let color = Color(term);
     const colors = {
       hex: color.hex().toString(),
@@ -35,5 +34,7 @@ export const fn = ({term, display, actions}) => {
         <Preview color={ colors } actions={ actions } />
       )
     });
+  } catch (e) {
+    // provided string is not color
   }
 };

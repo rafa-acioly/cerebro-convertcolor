@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`preview renders preview and matches snapshot 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    onKeyDown={[Function]}
+  >
+    <div
+      className="undefined"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onSelect={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className={undefined}
+        style={
+          Object {
+            "backgroundColor": "#000",
+          }
+        }
+      />
+      #000
+    </div>
+    <div
+      className="undefined"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onSelect={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className={undefined}
+        style={
+          Object {
+            "backgroundColor": "rgb(0, 0, 0)",
+          }
+        }
+      />
+      rgb(0, 0, 0)
+    </div>
+    <div
+      className="undefined"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onSelect={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className={undefined}
+        style={
+          Object {
+            "backgroundColor": "hsl(0, 0%, 0%)",
+          }
+        }
+      />
+      hsl(0, 0%, 0%)
+    </div>
+  </div>
+</div>
+`;
