@@ -25,7 +25,7 @@ export const fn = ({term, display, actions}) => {
     const colors = {
       hex: color.hex().toString(),
       rgb: color.rgb().string(),
-      hsl: color.hsl().string(),
+      hsl: color.hsl().round().string(),
     }
 
     display({
