@@ -29,7 +29,7 @@
     "hex-rgb": "^1.0.0"
   },
   "devDependencies": {
-    "cerebro-scripts": "^0.0.13",
+    "cerebro-scripts": "^0.0.18",
     "rimraf": "^2.6.1"
   }
 }
